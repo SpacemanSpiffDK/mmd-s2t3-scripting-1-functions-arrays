@@ -28,16 +28,17 @@ body {
 main {
 	width: 90%;
 	margin: 0 auto;
-	max-width: 600px;
-
+	max-width: 700px;
+	padding: 25px;
+	background-color: rgba(0,0,0,.1);
 }
 
 .filter-items > div {
 	float: left;
-	width: 30%;
-	margin: 1.5%;
+	width: 12%;
+	margin: 0.25%;
 	height: 0;
-	padding-bottom: 30%;
+	padding-bottom: 12%;
 	transition: all .3s ease-in-out;
 }
 
@@ -58,6 +59,7 @@ ul#filterList a {
 	color: #fff;
 	padding: 5px 10px;
 	background-color: rgba(0, 0, 0, .3);
+	font-size: 14px;
 }
 
 ul#filterList a.filterAll {
@@ -76,6 +78,18 @@ ul#filterList a.filterAll {
 	background-color: green;
 }
 
+.yellow {
+	background-color: yellow;
+}
+
+.magenta {
+	background-color: magenta;
+}
+
+.orange {
+	background-color: orange;
+}
+
 .purple {
 	background-color: purple;
 }
@@ -89,14 +103,12 @@ ul#filterList a.filterAll {
 }
 
 .filter-items > div.hide {
-	width: 0;
-	height: 0;
-	padding-bottom: 0;
-	margin: 0;
+	transform: scale(0);
 }
 
 @media (min-width: 640px) {
 	body {
 		font-size: 1rem;
+		padding: 25px;
 	}
 }
