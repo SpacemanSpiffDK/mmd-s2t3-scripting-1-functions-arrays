@@ -12,7 +12,7 @@
 
 <body>
     <main>
-        <ul id="filterList">
+        <ul id="filterList" class="clearfix">
             <li><a href="#" data-selector=".red, .green, .blue, .square, .circle, .rounded">all</a></li>
             <li><a href="#" data-selector=".red">red</a></li>
             <li><a href="#" data-selector=".green">green</a></li>
@@ -20,17 +20,19 @@
             <li><a href="#" data-selector=".square">square</a></li>
             <li><a href="#" data-selector=".rounded">rounded</a></li>
             <li><a href="#" data-selector=".circle">circle</a></li>
+            <li><a href="#" data-selector=".circle.red">red circles</a></li>
+            <li><a href="#" data-selector=".blue.square">blue squares</a></li>
         </ul>
-        <div class="filter-items">
-            <div class="filter red square"></div>
-            <div class="filter blue square"></div>
-            <div class="filter green square"></div>
-            <div class="filter red circle"></div>
-            <div class="filter blue circle"></div>
-            <div class="filter green circle"></div>
-            <div class="filter red rounded"></div>
-            <div class="filter blue rounded"></div>
-            <div class="filter green rounded"></div>
+        <div id="jsFilterItems" class="filter-items clearfix">
+            <div class="filterItem red square"></div>
+            <div class="filterItem blue square"></div>
+            <div class="filterItem green square"></div>
+            <div class="filterItem red circle"></div>
+            <div class="filterItem blue circle"></div>
+            <div class="filterItem green circle"></div>
+            <div class="filterItem red rounded"></div>
+            <div class="filterItem blue rounded"></div>
+            <div class="filterItem green rounded"></div>
         </div>
     </main>
 </body>
