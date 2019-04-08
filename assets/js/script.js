@@ -2,7 +2,7 @@
 // UCN MMD 2019
 
 window.onload = function () {
-    generateFilterItems(3);
+    generateItems(3);
     initFilter();
 }
 
@@ -21,7 +21,7 @@ function initFilter() {
 
 function filter(selector) {
     // hide all, show only elements with current selector
-    addClass(".filterItem", "hide");
+    addClass(".item", "hide");
     removeClass(selector, "hide");
 }
 
@@ -64,7 +64,7 @@ function manipulateClass(targetSelector, className, isAdd) {
     }
 }
 
-function generateFilterItems(amount){
+function generateItems(amount){
     const colors = ["red", "green", "blue", "purple"];
     const shapes = ["square", "circle", "rounded"];
     let content = "";
@@ -72,12 +72,12 @@ function generateFilterItems(amount){
         // random color
         let randomColor = colors[Math.floor(Math.random() * colors.length)];
         let randomShape = shapes[Math.floor(Math.random() * shapes.length)];
-        content += `<div class="filterItem ${randomColor} ${randomShape}"></div>`;
+        content += `<div class="item ${randomColor} ${randomShape}"></div>`;
     }
     
     // output to HTML
-    document.querySelector("#jsFilterItems").innerHTML = content;
-    generateFilter();
+    // document.querySelector("#jsFilterItems").innerHTML = content;
+    // generateFilter();
 }
 
 function generateFilter() {
@@ -86,11 +86,11 @@ function generateFilter() {
     // output array as links and init them with initFilter()
 
     let filters = [];
-    let filterItems = document.querySelectorAll(".filterItem");
+    let filterItems = document.querySelectorAll(".item");
     for (let i = 0; i < filterItems.length ; i++){
         let itemClassList = filterItems[i].classList;
         for (let j = 0; j < itemClassList.length; j++){
-            if (itemClassList[j] != "filterItem"){
+            if (itemClassList[j] != "item"){
                 // if class isn't already in list, let's push it there
                 let currentClass = itemClassList[j];
                 let currentClassFound = false;
@@ -107,13 +107,13 @@ function generateFilter() {
     }
     console.log(filters);    
     // sort filters alpha
-    filters.sort();
-    filters.reverse();
+    // filters.sort();
+    // filters.reverse();
 
     // output filters to HTML
-    let content = `<li><a href="#" data-selector=".red, .green, .blue, .square, .circle, .rounded">all</a></li>`;
+    let content = `<li><a href="#" data-selector=".red, .green, .blue, .square, .circle, .rounded" class="filterAll">all</a></li>`;
     for (let i = 0; i < filters.length; i++){
         content += `<li><a href="#" data-selector=".${filters[i]}">${filters[i]}</a></li>`;
     }
-    document.querySelector("#filterList").innerHTML = content;
+    // document.querySelector("#filterList").innerHTML = content;
 }

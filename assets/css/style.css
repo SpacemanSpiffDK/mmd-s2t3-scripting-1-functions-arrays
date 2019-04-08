@@ -58,7 +58,10 @@ ul#filterList a {
 	color: #fff;
 	padding: 5px 10px;
 	background-color: rgba(0, 0, 0, .3);
+}
 
+ul#filterList a.filterAll {
+	background-color: rgba(0, 128, 0, .9);
 }
 
 .red {
