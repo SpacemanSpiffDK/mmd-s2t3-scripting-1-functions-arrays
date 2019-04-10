@@ -25,26 +25,12 @@ function manipulateClass(targetSelector, className, isAdd) {
     // purpose of this function:
     // this is a helper function that adds or removes (isAdd) a class name (className) to all elements that fits targetSelector (used in the same way as a css selector)
     
-    // check first character in targetSelector, if # it's an ID, if . it's a class, if neither it's a tag
-    let targetFirstChar = targetSelector.substr(0, 1); // get first character of targetSelector, put it in the targetFirstChar variable
-    
-    // 2 options: either it's an ID (8)starts with #, use querySelector) OR it's a class or tag (use querySelectorAll)
-    
-    if (targetFirstChar == "#") { // it's an id
-        let elm = document.querySelector(targetSelector); // find the matching element
+    let elms = document.querySelectorAll(targetSelector); // create an array with the matching elements
+    for (let i = 0; i < elms.length; i++) { // loop through the array of elements
         if (isAdd) { // check isAdd, if true, then we should add the className
-            elm.classList.add(className); // add className to the classList on the element
+            elms[i].classList.add(className); // add className to the classList on the current element
         } else { // if false, then we should remove the className
-            elm.classList.remove(className); // remove className from the classList on the element
-        }
-    } else { // must be class or tag
-        let elms = document.querySelectorAll(targetSelector); // create an array with the matching elements
-        for (let i = 0; i < elms.length; i++) { // loop through the array of elements
-            if (isAdd) { // check isAdd, if true, then we should add the className
-                elms[i].classList.add(className); // add className to the classList on the current element
-            } else { // if false, then we should remove the className
-                elms[i].classList.remove(className); // remove className from the classList on the current element
-            }
+            elms[i].classList.remove(className); // remove className from the classList on the current element
         }
     }
 }
