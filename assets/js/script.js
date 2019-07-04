@@ -78,7 +78,7 @@ function generateItems(amount){
 function generateFilter() {
     // purpose of this function:
     // create array with the values of the colors and shapes that have been generated in the item list
-    // no double entries please!
+    // no double entries, please!
     // output array as links and init them with initFilter()
 
     let filters = []; // create an array that is going to store the filter names
